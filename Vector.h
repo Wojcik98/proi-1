@@ -1,5 +1,5 @@
 //
-// Created by chiemsee on 06.03.18.
+// Created by Wojcik98 on 06.03.18.
 //
 
 #ifndef INC_1PRJ_VECTOR_H
@@ -9,7 +9,7 @@
 
 class Vector {
 public:
-    Vector();
+    Vector(int dim);
     ~Vector();
 
     void set(int dim, double value);
@@ -26,7 +26,7 @@ public:
     bool operator!=(const Vector & v);
 
     friend std::ostream & operator<<(std::ostream &stream, const Vector & v);
-    friend std::ostream & operator>>(const Vector & v, std::ostream &stream);
+    friend std::istream & operator>>(std::istream &stream, const Vector & v);
 };
 
 
