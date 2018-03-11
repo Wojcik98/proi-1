@@ -5,7 +5,7 @@
 #ifndef INC_1PRJ_VECTOR_H
 #define INC_1PRJ_VECTOR_H
 
-#include <ostream>
+#include <iostream>
 
 class Vector {
 public:

@@ -3,7 +3,6 @@
 //
 
 #include "Vector.h"
-#include <iostream>
 
 /**
  * @brief Vector::Vector
@@ -164,7 +163,7 @@ Vector & Vector::operator-=(const Vector & v) {
 /**
  * @brief Vector::operator*
  * @param v vector
- * @return double value of dot product
+ * @return value of dot product
  * @throws exception if vectors have different sizes
  */
 double Vector::operator*(const Vector & v) {
