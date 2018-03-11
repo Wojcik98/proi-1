@@ -181,6 +181,12 @@ std::ostream & operator<<(std::ostream &stream, const Vector & v) {
     stream << v.at(v.length() - 1);
 }
 
-std::istream & operator>>(std::istream &stream, const Vector & v) {
+std::istream & operator>>(std::istream &stream, Vector & v) {
+    for(int i = 0; i < v.length(); i++){
+        double tmp;
+        stream >> tmp;
+        v.set(i, tmp);
+    }
 
+    return stream;
 }

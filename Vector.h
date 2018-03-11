@@ -29,7 +29,7 @@ public:
     bool operator!=(const Vector & v);
 
     friend std::ostream & operator<<(std::ostream &stream, const Vector & v);
-    friend std::istream & operator>>(std::istream &stream, const Vector & v);
+    friend std::istream & operator>>(std::istream &stream, Vector & v);
 
 private:
     int size;

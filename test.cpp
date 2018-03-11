@@ -134,7 +134,7 @@ void testInput() {
     std::stringstream stream;
     stream << "1.2 3.4 5.6";
     stream >> v;
-    assert(FEQUAL(v.at(0), 1.2) && FEQUAL(v.at(2), 3.4) && FEQUAL(v.at(2), 5.6));
+    assert(FEQUAL(v.at(0), 1.2) && FEQUAL(v.at(1), 3.4) && FEQUAL(v.at(2), 5.6));
 
     std::cout << "passed!\n";
 }
