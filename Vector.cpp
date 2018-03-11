@@ -29,7 +29,11 @@ Vector::~Vector() {
  * Sets given value on given position.
  */
 void Vector::set(int dim, double value) {
-
+    if(dim < size){
+        elements[dim] = value;
+    } else{
+        throw "Range exceeded!";
+    }
 }
 
 /**
@@ -38,7 +42,11 @@ void Vector::set(int dim, double value) {
  * @return value at the given position
  */
 double Vector::at(int dim) {
-
+    if(dim < size){
+        return elements[dim];
+    } else{
+        throw "Range exceeded!";
+    }
 }
 
 Vector Vector::operator+(const Vector & v) {
