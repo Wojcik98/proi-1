@@ -69,6 +69,12 @@ void Vector::resize(int newSize) {
     size = newSize;
 }
 
+/**
+ * @brief Vector::operator=
+ * @param v vector
+ * @return reference to *this
+ * Copies vector v to this.
+ */
 Vector & Vector::operator=(const Vector &v) {
     if(this->length() != v.length()){
         this->resize(v.length());
@@ -81,6 +87,12 @@ Vector & Vector::operator=(const Vector &v) {
     return *this;
 }
 
+/**
+ * @brief Vector::operator+
+ * @param v vector
+ * @return vector with values added element-wise
+ * @throws exception if vectors have different sizes
+ */
 Vector Vector::operator+(const Vector & v) {
     if(this->length() != v.length()){
         throw "Different sizes!";
@@ -94,6 +106,12 @@ Vector Vector::operator+(const Vector & v) {
     return u;
 }
 
+/**
+ * @brief Vector::operator+=
+ * @param  v vector
+ * @return reference to *this with values added element-wise
+ * @throws exception if vectors have different sizes
+ */
 Vector & Vector::operator+=(const Vector & v) {
     if(this->length() != v.length()){
         throw "Different sizes!";
@@ -106,6 +124,12 @@ Vector & Vector::operator+=(const Vector & v) {
     return *this;
 }
 
+/**
+ * @brief Vector::operator-
+ * @param v vector
+ * @return vector with values subtracted element-wise
+ * @throws exception if vectors have different sizes
+ */
 Vector Vector::operator-(const Vector & v) {
     if(this->length() != v.length()){
         throw "Different sizes!";
@@ -119,6 +143,12 @@ Vector Vector::operator-(const Vector & v) {
     return u;
 }
 
+/**
+ * @brief Vector::operator-=
+ * @param  v vector
+ * @return reference to *this with values subtracted element-wise
+ * @throws exception if vectors have different sizes
+ */
 Vector & Vector::operator-=(const Vector & v) {
     if(this->length() != v.length()){
         throw "Different sizes!";
@@ -131,6 +161,12 @@ Vector & Vector::operator-=(const Vector & v) {
     return *this;
 }
 
+/**
+ * @brief Vector::operator*
+ * @param v vector
+ * @return double value of dot product
+ * @throws exception if vectors have different sizes
+ */
 double Vector::operator*(const Vector & v) {
     if(this->length() != v.length()){
         throw "Different sizes!";
@@ -144,6 +180,11 @@ double Vector::operator*(const Vector & v) {
     return result;
 }
 
+/**
+ * @brief Vector::operator==
+ * @param v vector
+ * @return true if vectors have equal length and elements
+ */
 bool Vector::operator==(const Vector & v) {
     if(this->length() != v.length()){
         return false;
@@ -159,6 +200,11 @@ bool Vector::operator==(const Vector & v) {
     return true;
 }
 
+/**
+ * @brief Vector::operator!=
+ * @param v vector
+ * @return true if vectors have different length or elements
+ */
 bool Vector::operator!=(const Vector & v) {
     if(this->length() != v.length()){
         return true;
@@ -174,6 +220,13 @@ bool Vector::operator!=(const Vector & v) {
     return true;
 }
 
+/**
+ * @brief Vector::operator<<
+ * @param stream output stream
+ * @param v vector
+ * @return reference to output stream given in param
+ * Writes elements of v to stream.
+ */
 std::ostream & operator<<(std::ostream &stream, const Vector & v) {
     for(int i = 0; i < v.length() - 1; i++){
         stream << v.at(i) << " ";
@@ -183,6 +236,13 @@ std::ostream & operator<<(std::ostream &stream, const Vector & v) {
     return stream;
 }
 
+/**
+ * @brief Vector::operator>>
+ * @param stream input stream
+ * @param v vector
+ * @return reference to input stream given in param
+ * Reads elements from stream to v.
+ */
 std::istream & operator>>(std::istream &stream, Vector & v) {
     for(int i = 0; i < v.length(); i++){
         double tmp;
