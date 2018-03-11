@@ -3,6 +3,7 @@
 //
 
 #include "Vector.h"
+#include <iostream>
 
 /**
  * @brief Vector::Vector
@@ -41,7 +42,7 @@ void Vector::set(int dim, double value) {
  * @param dim position
  * @return value at the given position
  */
-double Vector::at(int dim) {
+double Vector::at(int dim) const {
     if(dim < size){
         return elements[dim];
     } else{
@@ -49,12 +50,60 @@ double Vector::at(int dim) {
     }
 }
 
-Vector Vector::operator+(const Vector & v) {
+/**
+ * @brief Vector::length
+ * @return size of vector
+ */
+int Vector::length() const {
+    return size;
+}
 
+/**
+ * @brief Vector::resize
+ * @param newSize new size of vector
+ * Resizes vector to given size deleting all existing elements.
+ */
+void Vector::resize(int newSize) {
+    delete[] elements;
+    elements = new double[newSize];
+    size = newSize;
+}
+
+Vector & Vector::operator=(const Vector &v) {
+    if(this->length() != v.length()){
+        this->resize(v.length());
+    }
+
+    for(int i = 0; i < this->length(); i++){
+        this->set(i, v.at(i));
+    }
+
+    return *this;
+}
+
+Vector Vector::operator+(const Vector & v) {
+    if(this->length() != v.length()){
+        throw "Different sizes!";
+    }
+
+    Vector u(this->length());
+    for(int i = 0; i < this->length(); i++){
+        u.set(i, this->at(i) + v.at(i));
+    }
+
+    return u;
 }
 
 Vector & Vector::operator+=(const Vector & v) {
+    if(this->length() != v.length()){
+        throw "Different sizes!";
+    }
 
+    for(int i = 0; i < this->length(); i++){
+        this->set(i, this->at(i) + v.at(i));
+    }
+
+    return *this;
 }
 
 Vector Vector::operator-(const Vector & v) {

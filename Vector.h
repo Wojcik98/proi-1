@@ -13,8 +13,12 @@ public:
     ~Vector();
 
     void set(int dim, double value);
-    double at(int dim);
+    double at(int dim) const;
 
+    int length() const;
+    void resize(int newSize);
+
+    Vector & operator=(const Vector & v);
     Vector operator+(const Vector & v);
     Vector & operator+=(const Vector & v);
     Vector operator-(const Vector & v);
