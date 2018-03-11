@@ -132,7 +132,16 @@ Vector & Vector::operator-=(const Vector & v) {
 }
 
 double Vector::operator*(const Vector & v) {
+    if(this->length() != v.length()){
+        throw "Different sizes!";
+    }
 
+    double result = 0.;
+    for(int i = 0; i < this->length(); i++){
+        result += this->at(i) * v.at(i);
+    }
+
+    return result;
 }
 
 bool Vector::operator==(const Vector & v) {
