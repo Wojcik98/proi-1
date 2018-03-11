@@ -10,7 +10,7 @@
 #define FEQUAL(a, b) (std::fabs((a) - (b)) < 0.000001)  //compares two floating point numbers
 
 int main() {
-    std::cout << "Running tests...";
+    std::cout << "Running tests...\n";
     testCreation();
     testAccess();
 
@@ -22,7 +22,7 @@ int main() {
     testInput();
     testOutput();
 
-    std::cout << "All tests passed!";
+    std::cout << "All tests passed!\n";
 
     return 0;
 }

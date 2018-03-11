@@ -10,7 +10,8 @@
  * Constructor.
  */
 Vector::Vector(int dim) {
-
+    elements = new double[dim];
+    size = dim;
 }
 
 /**
@@ -18,7 +19,7 @@ Vector::Vector(int dim) {
  * Destructor.
  */
 Vector::~Vector() {
-
+    delete[] elements;
 }
 
 /**

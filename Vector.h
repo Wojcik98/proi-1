@@ -26,6 +26,10 @@ public:
 
     friend std::ostream & operator<<(std::ostream &stream, const Vector & v);
     friend std::istream & operator>>(std::istream &stream, const Vector & v);
+
+private:
+    int size;
+    double* elements;
 };
 
 
