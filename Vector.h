@@ -9,7 +9,7 @@
 
 class Vector {
 public:
-    Vector(int dim);
+    explicit Vector(int dim);
     ~Vector();
 
     void set(int dim, double value);

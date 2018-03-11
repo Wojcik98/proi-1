@@ -107,11 +107,28 @@ Vector & Vector::operator+=(const Vector & v) {
 }
 
 Vector Vector::operator-(const Vector & v) {
+    if(this->length() != v.length()){
+        throw "Different sizes!";
+    }
 
+    Vector u(this->length());
+    for(int i = 0; i < this->length(); i++){
+        u.set(i, this->at(i) - v.at(i));
+    }
+
+    return u;
 }
 
 Vector & Vector::operator-=(const Vector & v) {
+    if(this->length() != v.length()){
+        throw "Different sizes!";
+    }
 
+    for(int i = 0; i < this->length(); i++){
+        this->set(i, this->at(i) - v.at(i));
+    }
+
+    return *this;
 }
 
 double Vector::operator*(const Vector & v) {

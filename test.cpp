@@ -118,9 +118,11 @@ void testEquality() {
     u.set(0, 10); u.set(1, 9); u.set(2, 8);
 
     assert(u != v);
+    assert(!(u == v));
 
     u.set(0, 1); u.set(1, 2); u.set(2, 3);
     assert(u == v);
+    assert(!(u != v));
 
     std::cout << "passed!\n";
 }
