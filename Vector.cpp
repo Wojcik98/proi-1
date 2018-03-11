@@ -4,18 +4,38 @@
 
 #include "Vector.h"
 
+/**
+ * @brief Vector::Vector
+ * @param dim dimension of vector
+ * Constructor.
+ */
 Vector::Vector(int dim) {
 
 }
 
+/**
+ * @brief Vector::~Vector
+ * Destructor.
+ */
 Vector::~Vector() {
 
 }
 
+/**
+ * @brief Vector::set
+ * @param dim position
+ * @param value value to set on position
+ * Sets given value on given position.
+ */
 void Vector::set(int dim, double value) {
 
 }
 
+/**
+ * @brief Vector::at
+ * @param dim position
+ * @return value at the given position
+ */
 double Vector::at(int dim) {
 
 }
@@ -36,11 +56,7 @@ Vector & Vector::operator-=(const Vector & v) {
 
 }
 
-Vector Vector::operator*(const Vector & v) {
-
-}
-
-Vector & Vector::operator*=(const Vector & v) {
+double Vector::operator*(const Vector & v) {
 
 }
 

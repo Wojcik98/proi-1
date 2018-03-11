@@ -19,8 +19,7 @@ public:
     Vector & operator+=(const Vector & v);
     Vector operator-(const Vector & v);
     Vector & operator-=(const Vector & v);
-    Vector operator*(const Vector & v);
-    Vector & operator*=(const Vector & v);
+    double operator*(const Vector & v);
 
     bool operator==(const Vector & v);
     bool operator!=(const Vector & v);

@@ -32,6 +32,8 @@ void testCreation() {
 
     std::unique_ptr<Vector> v(new Vector(3));
     assert(v != nullptr);
+
+    std::cout << "passed!\n";
 }
 
 void testAccess(){
@@ -57,6 +59,7 @@ void testAccess(){
     }
     assert(caughtException);
 
+    std::cout << "passed!\n";
 }
 
 void testAdding() {
@@ -72,6 +75,8 @@ void testAdding() {
 
     sum += v;
     assert(FEQUAL(sum.at(0), 12.) && FEQUAL(sum.at(1), 15.) && FEQUAL(sum.at(2), 18.));
+
+    std::cout << "passed!\n";
 }
 
 void testSubtracting() {
@@ -87,20 +92,37 @@ void testSubtracting() {
 
     sum -= v;
     assert(FEQUAL(sum.at(0), -10.) && FEQUAL(sum.at(1), -9.) && FEQUAL(sum.at(2), -8.));
+
+    std::cout << "passed!\n";
 }
 
 void testMultiplication() {
     std::cout << "Running testMultiplication...";
 
-    Vector v(3);
+    Vector v(3), u(3);
+    v.set(0, 1); v.set(1, 2); v.set(2, 3);
+    u.set(0, 10); u.set(1, 9); u.set(2, 8);
 
+    double result = u*v;
+
+    assert(FEQUAL(result, 52.));
+
+    std::cout << "passed!\n";
 }
 
 void testEquality() {
     std::cout << "Running testEquality...";
 
-    Vector v(3);
+    Vector v(3), u(3);
+    v.set(0, 1); v.set(1, 2); v.set(2, 3);
+    u.set(0, 10); u.set(1, 9); u.set(2, 8);
 
+    assert(u != v);
+
+    u.set(0, 1); u.set(1, 2); u.set(2, 3);
+    assert(u == v);
+
+    std::cout << "passed!\n";
 }
 
 void testInput() {
@@ -111,6 +133,8 @@ void testInput() {
     stream << "1.2 3.4 5.6";
     stream >> v;
     assert(FEQUAL(v.at(0), 1.2) && FEQUAL(v.at(2), 3.4) && FEQUAL(v.at(2), 5.6));
+
+    std::cout << "passed!\n";
 }
 
 void testOutput() {
@@ -121,4 +145,6 @@ void testOutput() {
     std::stringstream stream;
     stream << v;
     assert(stream.str() == "1.2 3.4 5.6");
+
+    std::cout << "passed!\n";
 }
