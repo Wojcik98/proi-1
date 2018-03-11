@@ -175,7 +175,10 @@ bool Vector::operator!=(const Vector & v) {
 }
 
 std::ostream & operator<<(std::ostream &stream, const Vector & v) {
-
+    for(int i = 0; i < v.length() - 1; i++){
+        stream << v.at(i) << " ";
+    }
+    stream << v.at(v.length() - 1);
 }
 
 std::istream & operator>>(std::istream &stream, const Vector & v) {

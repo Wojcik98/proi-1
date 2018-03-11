@@ -146,7 +146,7 @@ void testOutput() {
     v.set(0, 1.2); v.set(1, 2.3); v.set(2, 3.4);
     std::stringstream stream;
     stream << v;
-    assert(stream.str() == "1.2 3.4 5.6");
+    assert(stream.str() == "1.2 2.3 3.4");
 
     std::cout << "passed!\n";
 }
