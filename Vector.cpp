@@ -179,6 +179,8 @@ std::ostream & operator<<(std::ostream &stream, const Vector & v) {
         stream << v.at(i) << " ";
     }
     stream << v.at(v.length() - 1);
+
+    return stream;
 }
 
 std::istream & operator>>(std::istream &stream, Vector & v) {
