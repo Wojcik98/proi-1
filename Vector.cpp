@@ -145,11 +145,33 @@ double Vector::operator*(const Vector & v) {
 }
 
 bool Vector::operator==(const Vector & v) {
+    if(this->length() != v.length()){
+        return false;
+    }
+    const double EPS = 0.000000001;
+    for(int i = 0; i < this->length(); i++){
+        double value = this->at(i) - v.at(i);
+        if(!(-EPS < value && value < EPS)){
+            return false;
+        }
+    }
 
+    return true;
 }
 
 bool Vector::operator!=(const Vector & v) {
+    if(this->length() != v.length()){
+        return true;
+    }
+    const double EPS = 0.000000001;
+    for(int i = 0; i < this->length(); i++){
+        double value = this->at(i) - v.at(i);
+        if(-EPS < value && value < EPS){
+            return false;
+        }
+    }
 
+    return true;
 }
 
 std::ostream & operator<<(std::ostream &stream, const Vector & v) {
