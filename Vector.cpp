@@ -241,6 +241,7 @@ std::ostream & operator<<(std::ostream &stream, const Vector & v) {
  * @param v vector
  * @return reference to input stream given in param
  * Reads elements from stream to v.
+ * Number of elements read from stream is equal to the size of vector.
  */
 std::istream & operator>>(std::istream &stream, Vector & v) {
     for(int i = 0; i < v.length(); i++){
