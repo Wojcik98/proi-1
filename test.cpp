@@ -88,6 +88,23 @@ void testAdding() {
     sum += v;
     assert(FEQUAL(sum.at(0), 12.) && FEQUAL(sum.at(1), 15.) && FEQUAL(sum.at(2), 18.));
 
+    Vector x(5);
+    bool caughtException = false;
+    try {
+        x += u;
+    } catch(...){
+        caughtException = true;
+    }
+    assert(caughtException);
+
+    caughtException = false;
+    try {
+        x = x + u;
+    } catch(...){
+        caughtException = true;
+    }
+    assert(caughtException);
+
     std::cout << "passed!\n";
 }
 
@@ -109,6 +126,23 @@ void testSubtracting() {
     sum -= v;
     assert(FEQUAL(sum.at(0), -10.) && FEQUAL(sum.at(1), -9.) && FEQUAL(sum.at(2), -8.));
 
+    Vector x(5);
+    bool caughtException = false;
+    try {
+        x -= u;
+    } catch(...){
+        caughtException = true;
+    }
+    assert(caughtException);
+
+    caughtException = false;
+    try {
+        x = x - u;
+    } catch(...){
+        caughtException = true;
+    }
+    assert(caughtException);
+
     std::cout << "passed!\n";
 }
 
@@ -126,6 +160,15 @@ void testMultiplication() {
     double result = u*v;
 
     assert(FEQUAL(result, 52.));
+
+    Vector x(5);
+    bool caughtException = false;
+    try {
+        result = x * u;
+    } catch(...){
+        caughtException = true;
+    }
+    assert(caughtException);
 
     std::cout << "passed!\n";
 }
@@ -147,6 +190,10 @@ void testEquality() {
     u.set(0, 1); u.set(1, 2); u.set(2, 3);
     assert(u == v);
     assert(!(u != v));
+
+    Vector x(5);
+    assert(x != v);
+    assert(!(x == v));
 
     std::cout << "passed!\n";
 }
