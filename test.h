@@ -16,4 +16,6 @@ void testEquality();
 void testInput();
 void testOutput();
 
+void testScenario();
+
 #endif //INC_1PRJ_TEST_H

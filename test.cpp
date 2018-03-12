@@ -3,6 +3,7 @@
 #include <cassert>
 #include <memory>
 #include <cmath>
+#include <iomanip>
 
 #include "test.h"
 #include "Vector.h"
@@ -21,6 +22,8 @@ int main() {
 
     testInput();
     testOutput();
+
+    testScenario();
 
     std::cout << "All tests passed!\n";
 
@@ -226,6 +229,35 @@ void testOutput() {
     std::stringstream stream;
     stream << v;
     assert(stream.str() == "1.2 2.3 3.4");
+
+    std::cout << "passed!\n";
+}
+
+/**
+ * @brief testScenario
+ * Tests example usage of vectors.
+ */
+void testScenario() {
+    std::cout << "Running testScenario... ";
+
+    std::stringstream is, os;
+    is << "3\n2.0 4.0 2.5\n"; //sample input from user
+    int dim;
+    is >> dim;
+    Vector v(dim), u(3), y(3);
+    is >> v;
+    u.set(0, 1.2); u.set(1, 2.3); u.set(2, 3.4);
+    y.set(0, 9.0); y.set(1, 324234.5734573457); y.set(2, 2e-4);
+    double dotProduct = u*v;
+    Vector x(3);
+    x = u + v;
+    x.set(0, dotProduct);
+    x -= y;
+
+    os << std::setprecision(5);
+    os << x;
+
+    assert(os.str() == "11.1 -3.2423e+05 5.8998");
 
     std::cout << "passed!\n";
 }
