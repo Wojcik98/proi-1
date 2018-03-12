@@ -27,8 +27,12 @@ int main() {
     return 0;
 }
 
+/**
+ * @brief testCreation
+ * Tests if vector can be created.
+ */
 void testCreation() {
-    std::cout << "Running testCreation...";
+    std::cout << "Running testCreation... ";
 
     std::unique_ptr<Vector> v(new Vector(3));
     assert(v != nullptr);
@@ -36,8 +40,12 @@ void testCreation() {
     std::cout << "passed!\n";
 }
 
+/**
+ * @brief testAccess
+ * Tests if vector has working access methods.
+ */
 void testAccess(){
-    std::cout << "Running testAccess...";
+    std::cout << "Running testAccess... ";
 
     Vector v(3);
     v.set(1, 5.);
@@ -62,8 +70,12 @@ void testAccess(){
     std::cout << "passed!\n";
 }
 
+/**
+ * @brief testAdding
+ * Tests if two vectors are properly added to each other (element-wise).
+ */
 void testAdding() {
-    std::cout << "Running testAdding...";
+    std::cout << "Running testAdding... ";
 
     Vector v(3), u(3);
     v.set(0, 1); v.set(1, 2); v.set(2, 3);
@@ -79,8 +91,12 @@ void testAdding() {
     std::cout << "passed!\n";
 }
 
+/**
+ * @brief testSubtracting
+ * Tests if two vectors are properly subtracted from each other (element-wise).
+ */
 void testSubtracting() {
-    std::cout << "Running testSubtracting...";
+    std::cout << "Running testSubtracting... ";
 
     Vector v(3), u(3);
     v.set(0, 1); v.set(1, 2); v.set(2, 3);
@@ -96,8 +112,12 @@ void testSubtracting() {
     std::cout << "passed!\n";
 }
 
+/**
+ * @brief testMultiplication
+ * Tests if dot product of two vectors is calculated properly.
+ */
 void testMultiplication() {
-    std::cout << "Running testMultiplication...";
+    std::cout << "Running testMultiplication... ";
 
     Vector v(3), u(3);
     v.set(0, 1); v.set(1, 2); v.set(2, 3);
@@ -110,8 +130,12 @@ void testMultiplication() {
     std::cout << "passed!\n";
 }
 
+/**
+ * @brief testEquality
+ * Tests if vector can be compared to another one.
+ */
 void testEquality() {
-    std::cout << "Running testEquality...";
+    std::cout << "Running testEquality... ";
 
     Vector v(3), u(3);
     v.set(0, 1); v.set(1, 2); v.set(2, 3);
@@ -127,8 +151,12 @@ void testEquality() {
     std::cout << "passed!\n";
 }
 
+/**
+ * @brief testInput
+ * Tests if vector can properly read data from stream.
+ */
 void testInput() {
-    std::cout << "Running testInput...";
+    std::cout << "Running testInput... ";
 
     Vector v(3);
     std::stringstream stream;
@@ -139,8 +167,12 @@ void testInput() {
     std::cout << "passed!\n";
 }
 
+/**
+ * @brief testOutput
+ * Tests if vector can properly pass its data to stream.
+ */
 void testOutput() {
-    std::cout << "Running testOutput...";
+    std::cout << "Running testOutput... ";
 
     Vector v(3);
     v.set(0, 1.2); v.set(1, 2.3); v.set(2, 3.4);
